@@ -39,7 +39,7 @@ func (o *option) getGout() *gout.Client {
 	if o.Timeout != 0 {
 		goutOpts = append(goutOpts, gout.WithTimeout(o.Timeout))
 	} else {
-		goutOpts = append(goutOpts, gout.WithTimeout(time.Second*5))
+		goutOpts = append(goutOpts, gout.WithTimeout(time.Second * 30))
 	}
 	if o.InsecureSkipVerify {
 		goutOpts = append(goutOpts, gout.WithInsecureSkipVerify())
