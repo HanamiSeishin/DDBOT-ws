@@ -700,8 +700,8 @@ func (l *Lsp) SendMsg(m *mmsg.MSG, target mmsg.Target) (res []interface{}) {
 		if reflect.ValueOf(r).Elem().FieldByName("Id").Int() == -1 {
 			break
 		}
-		if idx > 1 {
-			time.Sleep(time.Millisecond * 300)
+		if idx > 0 {
+			time.Sleep(time.Millisecond * 1000)
 		}
 	}
 	return res
