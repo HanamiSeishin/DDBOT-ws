@@ -8,19 +8,12 @@ import (
 // TODO command需要重构成注册模式，然后把这个文件废弃
 
 var CommandMaps = map[string]string{
-	"RollCommand":          RollCommand,
-	"CheckinCommand":       CheckinCommand,
-	"ScoreCommand":         ScoreCommand,
 	"GrantCommand":         GrantCommand,
-	"LspCommand":           LspCommand,
 	"WatchCommand":         WatchCommand,
 	"UnwatchCommand":       UnwatchCommand,
 	"ListCommand":          ListCommand,
-	"SetuCommand":          SetuCommand,
-	"HuangtuCommand":       HuangtuCommand,
 	"EnableCommand":        EnableCommand,
 	"DisableCommand":       DisableCommand,
-	"ReverseCommand":       ReverseCommand,
 	"HelpCommand":          HelpCommand,
 	"ConfigCommand":        ConfigCommand,
 	"PingCommand":          PingCommand,
@@ -40,19 +33,12 @@ var CommandMaps = map[string]string{
 }
 
 const (
-	RollCommand    = "roll"
-	CheckinCommand = "签到"
-	ScoreCommand   = "查询积分"
 	GrantCommand   = "grant"
-	LspCommand     = "lsp"
 	WatchCommand   = "watch"
 	UnwatchCommand = "unwatch"
 	ListCommand    = "list"
-	SetuCommand    = "色图"
-	HuangtuCommand = "黄图"
 	EnableCommand  = "enable"
 	DisableCommand = "disable"
-	ReverseCommand = "倒放"
 	HelpCommand    = "help"
 	ConfigCommand  = "config"
 )
@@ -76,12 +62,12 @@ const (
 )
 
 var allGroupCommand = [...]string{
-	RollCommand, CheckinCommand, GrantCommand,
-	LspCommand, WatchCommand, UnwatchCommand,
-	ListCommand, SetuCommand, HuangtuCommand,
+	GrantCommand,
+	WatchCommand, UnwatchCommand,
+	ListCommand,
 	EnableCommand, DisableCommand,
-	ReverseCommand, ConfigCommand,
-	HelpCommand, ScoreCommand, AdminCommand,
+	ConfigCommand,
+	HelpCommand, AdminCommand,
 	SilenceCommand, NoUpdateCommand, CleanConcern,
 }
 
