@@ -90,23 +90,6 @@ func (lgc *LspGroupCommand) Execute() {
 	log.Debug("execute command")
 
 	switch lgc.CommandName() {
-	case LspCommand:
-		if lgc.requireNotDisable(LspCommand) {
-			lgc.LspCommand()
-		}
-	case SetuCommand:
-		if lgc.requireEnable(SetuCommand) {
-			lgc.SetuCommand(false)
-		}
-	case HuangtuCommand:
-		if lgc.requireEnable(HuangtuCommand) {
-			if lgc.l.PermissionStateManager.RequireAny(
-				permission.AdminRoleRequireOption(lgc.uin()),
-				permission.GroupCommandRequireOption(lgc.groupCode(), lgc.uin(), HuangtuCommand),
-			) {
-				lgc.SetuCommand(true)
-			}
-		}
 	case WatchCommand:
 		if lgc.requireNotDisable(WatchCommand) {
 			lgc.WatchCommand(false)
@@ -123,18 +106,6 @@ func (lgc *LspGroupCommand) Execute() {
 		if lgc.requireNotDisable(ConfigCommand) {
 			lgc.ConfigCommand()
 		}
-	case CheckinCommand:
-		if lgc.requireNotDisable(CheckinCommand) {
-			lgc.CheckinCommand()
-		}
-	case RollCommand:
-		if lgc.requireNotDisable(RollCommand) {
-			lgc.RollCommand()
-		}
-	case ScoreCommand:
-		if lgc.requireNotDisable(ScoreCommand) {
-			lgc.ScoreCommand()
-		}
 	case GrantCommand:
 		lgc.GrantCommand()
 	case EnableCommand:
@@ -143,10 +114,6 @@ func (lgc *LspGroupCommand) Execute() {
 		lgc.EnableCommand(true)
 	case SilenceCommand:
 		lgc.SilenceCommand()
-	case ReverseCommand:
-		if lgc.requireNotDisable(ReverseCommand) {
-			lgc.ReverseCommand()
-		}
 	case HelpCommand:
 		if lgc.requireNotDisable(HelpCommand) {
 			lgc.HelpCommand()
